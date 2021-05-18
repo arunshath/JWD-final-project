@@ -52,53 +52,56 @@
           <div class="modal-body">
             <!-- Form Starts Here -->
             <div class="mb-3">
-              <label for="exampleFormControlInput1" class="form-label"
-                >Task Name</label
-              >
+              <label for="taskname-input" class="form-label">Task Name</label>
               <input
                 type="text"
                 class="form-control"
-                id="exampleFormControlInput1"
+                id="taskname-input"
                 placeholder="What Do you Need To Do"
               />
             </div>
             <div class="mb-3">
-              <label for="exampleFormControlTextarea1" class="form-label"
+              <label for="description-input" class="form-label"
                 >Task Description</label
               >
               <textarea
                 class="form-control"
-                id="exampleFormControlTextarea1"
+                id="description-input"
                 rows="3"
               ></textarea>
             </div>
             <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label"
-                  >Assigned To</label
-                >
+              <label for="assignedto-input" class="form-label"
+                >Assigned To</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="assignedto-input"
+                placeholder="Who will do this?"
+              />
+            </div>
+            <div class="form-group row">
+              <label for="due-date-input">Due Date</label>
+              <div class="col-10">
                 <input
-                  type="text"
                   class="form-control"
-                  id="exampleFormControlInput1"
-                  placeholder="Who will do this?"
+                  type="date"
+                  value="2021-05-17"
+                  id="due-date-input"
                 />
               </div>
-              <div class="form-group row">
-                <label for="example-date-input">Due Date</label>
-                <div class="col-10">
-                  <input class="form-control" type="date" value="2021-05-17" id="due-date-input">
-                </div>
-              </div>
+            </div>
 
-              <div class="input-group mb-3">
-                <label class="input-group-text" for="inputGroupSelect01">Status</label>
-                <select class="form-select" id="inputGroupSelect01">
-                  <option selected>Choose...</option>
-                  <option value="1">Assigned</option>
-                  <option value="2">In Progress</option>
-                  <option value="3">Done</option>
-                </select>
-              </div>
+            <div class="input-group mb-3">
+              <label class="input-group-text" for="status-input">Status</label>
+              <select class="form-select" id="status-input">
+                <option selected>Choose...</option>
+                <option value="1">Assigned</option>
+                <option value="2">In Progress</option>
+                <option value="3">Done</option>
+              </select>
+            </div>
             <!-- Form Ends Here -->
           </div>
           <div class="modal-footer">
@@ -115,6 +118,81 @@
       </div>
     </div>
     <!-- Modal Ends Here -->
+
+    <!-- Card List Starts Here -->
+    <div class="container">
+      <div class="row">
+
+      
+        <ul class="list-group"></ul>
+        <li class="list-group-item">
+          <div class="card" style="width: 18rem">
+            <h5 class="card-header">Task Name</h5>
+            <div class="card-body">
+              <h5 class="card-title">Assigned To</h5>
+              <p class="card-text">Task Description</p>
+              <p class="card-text">Task Due Date</p>
+              <p class="card-text">Task Status</p>
+              <a href="#" class="btn btn-success">Mark as Done</a>
+              <a href="#" class="btn btn-danger">Delete</a>
+            </div>
+          </div>
+        </li>
+        <li class="list-group-item">
+          <div class="card" style="width: 18rem">
+            <h5 class="card-header">Task Name</h5>
+            <div class="card-body">
+              <h5 class="card-title">Assigned To</h5>
+              <p class="card-text">Task Description</p>
+              <p class="card-text">Task Due Date</p>
+              <p class="card-text">Task Status</p>
+              <a href="#" class="btn btn-success">Mark as Done</a>
+              <a href="#" class="btn btn-danger">Delete</a>
+            </div>
+          </div>
+        </li>
+        <li class="list-group-item">
+          <div class="card" style="width: 18rem">
+            <h5 class="card-header">Task Name</h5>
+            <div class="card-body">
+              <h5 class="card-title">Assigned To</h5>
+              <p class="card-text">Task Description</p>
+              <p class="card-text">Task Due Date</p>
+              <p class="card-text">Task Status</p>
+              <a href="#" class="btn btn-success">Mark as Done</a>
+              <a href="#" class="btn btn-danger">Delete</a>
+            </div>
+          </div>
+        </li>
+        <li class="list-group-item">
+          <div class="card" style="width: 18rem">
+            <h5 class="card-header">Task Name</h5>
+            <div class="card-body">
+              <h5 class="card-title">Assigned To</h5>
+              <p class="card-text">Task Description</p>
+              <p class="card-text">Task Due Date</p>
+              <p class="card-text">Task Status</p>
+              <a href="#" class="btn btn-success">Mark as Done</a>
+              <a href="#" class="btn btn-danger">Delete</a>
+            </div>
+          </div>
+        </li>
+        <li class="list-group-item">
+          <div class="card" style="width: 18rem">
+            <h5 class="card-header">Task Name</h5>
+            <div class="card-body">
+              <h5 class="card-title">Assigned To</h5>
+              <p class="card-text">Task Description</p>
+              <p class="card-text">Task Due Date</p>
+              <p class="card-text">Task Status</p>
+              <a href="#" class="btn btn-success">Mark as Done</a>
+              <a href="#" class="btn btn-danger">Delete</a>
+            </div>
+          </div>
+        </li>
+      </div>
+    </div>
+    <!-- Card List Ends Here -->
 
     <!-- Optional JavaScript; choose one of the two! -->
 
