@@ -1,4 +1,9 @@
+// Initialize a new TaskManager with currentId set to 0
+const taskManager = new TaskManager(0);
+console.log(TaskManager)
+// Select the New Task Form
 const form = document.querySelector("#new-task-form");
+
 
 form.addEventListener("submit", (event) => {
     const validateName = document.querySelector("#taskname-input");
@@ -68,7 +73,7 @@ form.addEventListener("submit", (event) => {
   // If validation fails then function 
   // will return. 
   // reset to 0.
-  // ----------------------------------------------------------------------------------
+
   if (validationFail > 0) {
     validationFail = 0;
     return;
