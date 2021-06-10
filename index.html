@@ -61,7 +61,12 @@
                 class="form-control"
                 id="taskname-input"
                 placeholder="What Do you Need To Do"
+                
               />
+              <div class="valid-feedback"></div>
+              <div class="invalid-feedback">
+                Please provide a valid name.
+              </div>
             </div>
             <div class="mb-3">
               <label for="description-input" class="form-label"
@@ -72,6 +77,10 @@
                 id="description-input"
                 rows="3"
               ></textarea>
+              <div class="valid-feedback"></div>
+              <div class="invalid-feedback">
+                Please provide a valid description.
+              </div>
             </div>
             <div class="mb-3">
               <label for="assignedto-input" class="form-label"
@@ -83,6 +92,10 @@
                 id="assignedto-input"
                 placeholder="Who will do this?"
               />
+              <div class="valid-feedback"></div>
+              <div class="invalid-feedback">
+                Please provide a valid name.
+              </div>
             </div>
             <div class="form-group row">
               <label for="due-date-input">Due Date</label>
@@ -90,9 +103,13 @@
                 <input
                   class="form-control"
                   type="date"
-                  value="2021-05-17"
+                  value=date
                   id="due-date-input"
                 />
+                <div class="valid-feedback"></div>
+                <div class="invalid-feedback">
+                  Please provide a valid date.
+                </div>
               </div>
             </div>
 

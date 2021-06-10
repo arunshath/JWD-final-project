@@ -1,6 +1,6 @@
 // Initialize a new TaskManager with currentId set to 0
 const taskManager = new TaskManager(0);
-console.log(TaskManager)
+console.log(taskManager.tasks)
 // Select the New Task Form
 const form = document.querySelector("#new-task-form");
 
