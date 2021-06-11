@@ -1,21 +1,38 @@
 // Initialize a new TaskManager with currentId set to 0
 const taskManager = new TaskManager(0);
+
+// Testing Area
 console.log(taskManager.tasks)
 // Select the New Task Form
 const form = document.querySelector("#new-task-form");
 
-
+//event listener
 form.addEventListener("submit", (event) => {
-    const validateName = document.querySelector("#taskname-input");
-    const validateDescription = document.querySelector("#description-input");
-    const validateAssignedTo = document.querySelector("#assignedto-input");
-    const validateDueDate = document.querySelector("#due-date-input");
-    const validateStatus = document.querySelector("#status-input");
+    let validateName = document.querySelector("#taskname-input");
+    let validateDescription = document.querySelector("#description-input");
+    let validateAssignedTo = document.querySelector("#assignedto-input");
+    let validateDueDate = document.querySelector("#due-date-input");
+    let validateStatus = document.querySelector("#status-input");
     let validationFail = 0;
 
     
   event.preventDefault();
-  event.stopPropagation();
+
+   // Call this to clear all the form fields after the submission
+   const clearFormFields = () => {
+    validateName.value = "";
+    validateDescription.value = "";
+    validateAssignedTo.value = "";
+    validateStatus.value = "In Progress";
+    validateDueDate.value = "";
+    validateName.classList.remove("is-valid");
+    validateDescription.classList.remove("is-valid");
+    validateAssignedTo.classList.remove("is-valid");
+    validateStatus.classList.remove("is-valid");
+    validateDueDate.classList.remove("is-valid");
+  };
+
+  // event.stopPropagation();
   console.log("Task Name :" + validateName.value.length);
   console.log("Task Description :" + validateDescription.value.length);
   console.log("Task Assigned To :" + validateAssignedTo.value.length);
@@ -77,5 +94,15 @@ form.addEventListener("submit", (event) => {
   if (validationFail > 0) {
     validationFail = 0;
     return;
+   } else {
+      // Push the valid input into our tasks array
+      taskManager.addTask(
+        validateName.value,
+        validateDescription.value,
+        validateAssignedTo.value,
+        validateDueDate.value,
+        validateStatus.value
+      );
+      clearFormFields();
   }
 });
