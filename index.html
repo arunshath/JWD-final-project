@@ -40,19 +40,20 @@
       aria-labelledby="staticBackdropLabel"
       aria-hidden="true"
     >
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" class="text-center"  id="staticBackdropLabel">Enter New Task</h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <form id="new-task-form"> 
-          <div class="modal-body" >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" class="text-center"  id="staticBackdropLabel">Enter New Task</h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <form id="new-task-form"> 
+        <div class="modal-body" >
+           
             <!-- Form Starts Here -->
             <div class="mb-3">
               <label for="taskname-input" class="form-label">Task Name</label>
@@ -116,10 +117,10 @@
             <div class="input-group mb-3 mt-5">
               <label class="input-group-text" for="status-input">Status</label>
               <select class="form-select" id="status-input">
-                <option selected>Choose...</option>
-                <option value="1">Assigned</option>
-                <option value="2">In Progress</option>
-                <option value="3">Done</option>
+                <option selected>To Do</option>
+                <option value="Assigned">Assigned</option>
+                <option value="In Progress">In Progress</option>
+                <option value="Done">Done</option>
               </select>
             </div>
             <!-- Form Ends Here -->
@@ -142,72 +143,7 @@
 
     <!-- Card List Starts Here -->
     <div class="d-flex justify-content-evenly mt-5" class="align-middle">
-        <ul class="list-group"></ul>
-        <li class="list-group-item">
-          <div class="card" style="width: 18rem">
-            <h5 class="card-header">Task Name</h5>
-            <div class="card-body">
-              <h5 class="card-title">Assigned To</h5>
-              <p class="card-text">Task Description</p>
-              <p class="card-text">Task Due Date</p>
-              <p class="card-text">Task Status</p>
-              <a href="#" class="btn btn-success">Mark as Done</a>
-              <a href="#" class="btn btn-danger">Delete</a>
-            </div>
-          </div>
-        </li>
-        <li class="list-group-item">
-          <div class="card" style="width: 18rem">
-            <h5 class="card-header">Task Name</h5>
-            <div class="card-body">
-              <h5 class="card-title">Assigned To</h5>
-              <p class="card-text">Task Description</p>
-              <p class="card-text">Task Due Date</p>
-              <p class="card-text">Task Status</p>
-              <a href="#" class="btn btn-success">Mark as Done</a>
-              <a href="#" class="btn btn-danger">Delete</a>
-            </div>
-          </div>
-        </li>
-        <li class="list-group-item">
-          <div class="card" style="width: 18rem">
-            <h5 class="card-header">Task Name</h5>
-            <div class="card-body">
-              <h5 class="card-title">Assigned To</h5>
-              <p class="card-text">Task Description</p>
-              <p class="card-text">Task Due Date</p>
-              <p class="card-text">Task Status</p>
-              <a href="#" class="btn btn-success">Mark as Done</a>
-              <a href="#" class="btn btn-danger">Delete</a>
-            </div>
-          </div>
-        </li>
-        <li class="list-group-item">
-          <div class="card" style="width: 18rem">
-            <h5 class="card-header">Task Name</h5>
-            <div class="card-body">
-              <h5 class="card-title">Assigned To</h5>
-              <p class="card-text">Task Description</p>
-              <p class="card-text">Task Due Date</p>
-              <p class="card-text">Task Status</p>
-              <a href="#" class="btn btn-success">Mark as Done</a>
-              <a href="#" class="btn btn-danger">Delete</a>
-            </div>
-          </div>
-        </li>
-        <li class="list-group-item">
-          <div class="card" style="width: 18rem">
-            <h5 class="card-header">Task Name</h5>
-            <div class="card-body">
-              <h5 class="card-title">Assigned To</h5>
-              <p class="card-text">Task Description</p>
-              <p class="card-text">Task Due Date</p>
-              <p class="card-text">Task Status</p>
-              <a href="#" class="btn btn-success">Mark as Done</a>
-              <a href="#" class="btn btn-danger">Delete</a>
-            </div>
-          </div>
-        </li>
+        <ul class="list-group" id="task-list"></ul>
     </div>
     <!-- Card List Ends Here -->
 

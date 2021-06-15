@@ -2,7 +2,7 @@
 const taskManager = new TaskManager(0);
 
 // Testing Area
-console.log(taskManager.tasks)
+console.log(taskManager)
 // Select the New Task Form
 const form = document.querySelector("#new-task-form");
 
@@ -104,5 +104,6 @@ form.addEventListener("submit", (event) => {
         validateStatus.value
       );
       clearFormFields();
+      taskManager.render();
   }
 });
