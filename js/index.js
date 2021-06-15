@@ -59,8 +59,8 @@ form.addEventListener("submit", (event) => {
     validationFail++;
   }
 
-  // Form validation for Task Assigned Field min length 5
-  if (validateAssignedTo.value.length > 5) {
+  // Form validation for Task Assigned Field min length 2
+  if (validateAssignedTo.value.length > 2) {
     validateAssignedTo.classList.add("is-valid");
     validateAssignedTo.classList.remove("is-invalid");
   } else {
@@ -105,5 +105,6 @@ form.addEventListener("submit", (event) => {
       );
       clearFormFields();
       taskManager.render();
+      $('#new-task-form').modal('hide');
   }
 });
