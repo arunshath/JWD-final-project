@@ -23,7 +23,7 @@ form.addEventListener("submit", (event) => {
     validateName.value = "";
     validateDescription.value = "";
     validateAssignedTo.value = "";
-    validateStatus.value = "In Progress";
+    validateStatus.value = "To Do";
     validateDueDate.value = "";
     validateName.classList.remove("is-valid");
     validateDescription.classList.remove("is-valid");
@@ -105,6 +105,5 @@ form.addEventListener("submit", (event) => {
       );
       clearFormFields();
       taskManager.render();
-      $('#new-task-form').modal('hide');
   }
 });
