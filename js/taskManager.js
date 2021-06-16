@@ -1,14 +1,14 @@
-const createTaskHtml = (name, description, assignedTo, dueDate, status) => {
-  const html = ` <li class="list-group-item">
+const createTaskHtml = (id, name, description, assignedTo, dueDate, status) => {
+  const html = `<li class="list-group-item" data-task-id="${id}">
   <div class="card" style="width: 18rem">
-    <h5 class="card-header">${name}</h5>
+    <h5 class="card-title">${name}</h5>
     <div class="card-body">
       <h5 class="card-title">${assignedTo}</h5>
       <p class="card-text">${description}</p>
       <p class="card-text">${dueDate}</p>
       <p class="card-text">${status}</p>
-      <a href="#" class="btn btn-success">Mark as Done</a>
-      <a href="#" class="btn btn-danger">Delete</a>
+      <a class="btn btn-success done-button">Mark as Done</a>
+      <a class="btn btn-danger">Delete</a>
     </div>
   </div>
 </li>`;
@@ -38,7 +38,22 @@ class TaskManager {
 
     this.tasks.push( task );
   }
-
+  getTaskById(taskId) {
+    // Create a variable to store the found task
+    let foundTask;
+    // Loop over the tasks and find the task with the id passed as a parameter
+    for (let i = 0; i < this.tasks.length; i++) {
+      // Get the current task in the loop
+      const task = this.tasks[i];
+      // Check if its the right task by comparing the task's id to the id passed as a parameter
+      if (task.id === taskId) {
+        // Store the task in the foundTask variable
+        foundTask = task;
+      }
+    }
+    // Return the found task
+    return foundTask;
+  }
 
   // Create the render method
   render() {
@@ -53,6 +68,7 @@ class TaskManager {
         date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();
       // Create the task html
       const taskHtml = createTaskHtml(
+        task.id,
         task.name,
         task.description,
         task.assignedTo,
