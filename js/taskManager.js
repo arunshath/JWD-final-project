@@ -7,7 +7,7 @@ const createTaskHtml = (id, name, description, assignedTo, dueDate, status) => {
       <p class="card-text">${description}</p>
       <p class="card-text">${dueDate}</p>
       <p class="card-text">${status}</p>
-      <a class="btn btn-success done-button">Mark as Done</a>
+      <a class="btn btn-success done-button ${status.toLowerCase() == "done" ? "d-none" : ""}">Mark as Done</a>
       <a class="btn btn-danger">Delete</a>
     </div>
   </div>
