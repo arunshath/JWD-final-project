@@ -1,8 +1,14 @@
 // Initialize a new TaskManager with currentId set to 0
 const taskManager = new TaskManager(0);
+// Load the tasks from localStorage
+taskManager.load();
+// Render the loaded tasks to the page
+taskManager.render();
 
 // Testing Area
 console.log(taskManager)
+
+
 // Select the New Task Form
 const form = document.querySelector("#new-task-form");
 
@@ -104,6 +110,7 @@ form.addEventListener("submit", (event) => {
         validateStatus.value
       );
       clearFormFields();
+      taskManager.save();
       taskManager.render();
   }
 });
@@ -114,7 +121,6 @@ taskList.addEventListener("click", (event) => {
   // Check if a "Mark As Done" button was clicked
   if (event.target.classList.contains('done-button')) {
     // Get the correct parent Task, yours might be slightly different
-    // Use console.log(event.target.parentElement) to see
     const parentTask =
       event.target.parentElement.parentElement.parentElement;
     // Get the taskId of the parent Task and turn it into a number.
@@ -124,6 +130,7 @@ taskList.addEventListener("click", (event) => {
     // Update the task status to 'DONE'
     task.status = "Done";
     // Render the tasks
+    taskManager.save();
     taskManager.render();
   } 
 });
