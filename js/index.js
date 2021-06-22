@@ -1,8 +1,8 @@
-// Initialize a new TaskManager with currentId set to 0
+// Initialize a new TaskManager
 const taskManager = new TaskManager(0);
-// Load the tasks from localStorage
+// Load the tasks
 taskManager.load();
-// Render the loaded tasks to the page
+// Render the loaded tasks
 taskManager.render();
 
 // Testing Area
@@ -24,7 +24,7 @@ form.addEventListener("submit", (event) => {
     
   event.preventDefault();
 
-   // Call this to clear all the form fields after the submission
+   //Clear all the form fields after the submission
    const clearFormFields = () => {
     validateName.value = "";
     validateDescription.value = "";
@@ -84,7 +84,7 @@ form.addEventListener("submit", (event) => {
     validateDueDate.classList.remove("is-valid");
     validationFail++;
   }
-  // Form validation for Task Status Field not empty
+  // Form validation for Task Status Field
   if (validateAssignedTo.value) {
     validateAssignedTo.classList.add("is-valid");
     validateAssignedTo.classList.remove("is-invalid");
@@ -116,40 +116,28 @@ form.addEventListener("submit", (event) => {
 });
 
 const taskList = document.querySelector("#task-list");
-// Add an 'onclick' event listener to the Tasks List
+
 taskList.addEventListener("click", (event) => {
-  // Check if a "Mark As Done" button was clicked
+  
   if (event.target.classList.contains('done-button')) {
-    // Get the correct parent Task, yours might be slightly different
     const parentTask =
       event.target.parentElement.parentElement.parentElement;
-    // Get the taskId of the parent Task and turn it into a number.
     const taskId = Number(parentTask.dataset.taskId);
-    // Get the task from the TaskManager using the taskId
     const task = taskManager.getTaskById(taskId);
-    // Update the task status to 'DONE'
     task.status = "Done";
-    // Render the tasks
+    
     taskManager.save();
     taskManager.render();
   } 
 
-   // Check if a "Delete" button was clicked
+   
    if (event.target.classList.contains("btn-danger")) {
-    // Get the parent Task
     const parentTask =
       event.target.parentElement.parentElement.parentElement;
-
-    // Get the taskId of the parent Task.
     const taskId = Number(parentTask.dataset.taskId);
-
-    // Delete the task
     taskManager.deleteTask(taskId);
 
-    // Save the tasks to localStorage
     taskManager.save();
-
-    // Render the tasks
     taskManager.render();
   }
 });
