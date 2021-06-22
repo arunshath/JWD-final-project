@@ -11,6 +11,7 @@ console.log(taskManager)
 
 // Select the New Task Form
 const form = document.querySelector("#new-task-form");
+const myModal = new bootstrap.Modal(document.getElementById("staticBackdrop"));
 
 // submit event listener
 form.addEventListener("submit", (event) => {
@@ -46,7 +47,7 @@ form.addEventListener("submit", (event) => {
   console.log("Task Status:" + validateStatus.value);
 
   // Form validation for Task Name Field min length 5
-  if (validateName.value.length > 5) {
+  if (validateName.value.trim().length > 5) {
     validateName.classList.add("is-valid");
     validateName.classList.remove("is-invalid");
   } else {
@@ -56,7 +57,7 @@ form.addEventListener("submit", (event) => {
   }
 
   // Form validation for Task Description Field min length 5
-  if (validateDescription.value.length > 5) {
+  if (validateDescription.value.trim().length > 5) {
     validateDescription.classList.add("is-valid");
     validateDescription.classList.remove("is-invalid");
   } else {
@@ -65,8 +66,8 @@ form.addEventListener("submit", (event) => {
     validationFail++;
   }
 
-  // Form validation for Task Assigned Field min length 2
-  if (validateAssignedTo.value.length > 2) {
+  // Form validation for Task Assigned Field min length 5
+  if (validateAssignedTo.value.trim().length > 5) {
     validateAssignedTo.classList.add("is-valid");
     validateAssignedTo.classList.remove("is-invalid");
   } else {
@@ -96,7 +97,7 @@ form.addEventListener("submit", (event) => {
   // If validation fails then function 
   // will return. 
   // reset to 0.
-
+ 
   if (validationFail > 0) {
     validationFail = 0;
     return;
@@ -112,7 +113,8 @@ form.addEventListener("submit", (event) => {
       clearFormFields();
       taskManager.save();
       taskManager.render();
-  }
+      myModal.hide();
+   }
 });
 
 const taskList = document.querySelector("#task-list");
